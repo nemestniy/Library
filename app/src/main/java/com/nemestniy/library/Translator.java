@@ -63,10 +63,10 @@ public class Translator extends AppCompatActivity {
 
                 Call<Object> call = inter.translate(jsonMap);         //take inquiry
 
-               /* try {                                                 //there we take synchronous inquiry
+               /* try {                                                 //here we take synchronous inquiry
                     Response<Object> response = call.execute();
 
-                    Map<String, String> map = gson.fromJson(response.body().toString(), Map.class); // there we get callback in Gson
+                    Map<String, String> map = gson.fromJson(response.body().toString(), Map.class); // here we get callback in Gson
 
                     for(Map.Entry ent : map.entrySet()) {
                         if(ent.getKey().equals("text")){
@@ -81,7 +81,7 @@ public class Translator extends AppCompatActivity {
                 }
             }
         }); */
-              call.enqueue(new Callback<Object>() {         //there we take asynchronous inquiry
+              call.enqueue(new Callback<Object>() {         //here we take asynchronous inquiry
                   @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                   @Override
                   public void onResponse(Call<Object> call, Response<Object> response) {
