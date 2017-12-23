@@ -19,4 +19,9 @@ public class MainActivity extends AppCompatActivity {
         Intent act = new Intent(this, Translator.class);
         startActivity(act);
     }
+
+    public void Styles (View view){
+        Intent act = new Intent(this, Styles.class);
+        startActivity(act);
+    }
 }

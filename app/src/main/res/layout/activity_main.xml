@@ -35,11 +35,15 @@
                 android:text="Переводчик" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/styles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="3sp"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:background="#0077ff"
+                android:fontFamily="monospace"
+                android:onClick="Styles"
+                android:text="Styles" />
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

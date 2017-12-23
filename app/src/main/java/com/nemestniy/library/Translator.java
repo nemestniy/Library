@@ -1,5 +1,6 @@
 package com.nemestniy.library;
 
+import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
@@ -8,6 +9,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -53,9 +55,16 @@ public class Translator extends AppCompatActivity {
         getStr = (EditText) findViewById(R.id.editTranslate);
         translate = (Button) findViewById(R.id.translate);
 
+        Context con = getApplicationContext();                                                                              // open keyboard in begin
+        final InputMethodManager imm = (InputMethodManager) con.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+
         translate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                imm.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT, 0);
+
                 HashMap<String, String> jsonMap = new HashMap<>();    // made inquiry
                 jsonMap.put("key", Api);
                 jsonMap.put("lang", "en-ru");
